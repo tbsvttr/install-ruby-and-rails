@@ -21,3 +21,11 @@ This is a guide to install Ruby and the web development framework Rails on Windo
 6. Modern Rails has a lot of depencencies to JavaScript so we need to get Node.js (including npm) via `curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -` and `sudo apt-get install nodejs`. Check if it works with `node -v` and `npm -v`
 7. Now finally we get Rails with `gem install rails -v 4.2.7` and `rbenv rehash`. Check if it works with `rails -v`.
 8. The final check will be done with `rails new anapp`, followed by `cd anapp`, and `rails s`. The local development server will be reachable in your Windows environment on *localhost:3000*.
+
+## Other Versions
+If you want to install other versions than given above you can do that. If you know the version you need, then just replace that version number with those I gave. If you are not sure which versions are avaivable then do:
+* `rbenv install --list` for Ruby
+* `gem list rails --remote --all` for Rails
+
+For the case that you want to use the more current but less stable Node.js 6 do this instead of the given above:
++ `curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -`.
