@@ -1,4 +1,4 @@
-# Install Ruby and Rails on Windows 10, OS X, and Ubuntu
+# Install Ruby and Rails on Windows 10, Ubuntu, and OS X
 This is a guide to install Ruby and the web development framework Rails on Windows 10, OS X 10.11 "El Capitan", and Ubuntu 16.04 "Xenial Xerus".
 
 ## Install Ruby and Rails on Windows 10
@@ -11,6 +11,7 @@ This is a guide to install Ruby and the web development framework Rails on Windo
 6. You are now in a basic Ubuntu 14.04 environment in Windows 10 and are able to run Linux applications!
 7. From this point on you can follow the instructions for Ubuntu.
 8. There might be some premission error with bundler which you can fix with `chmod +t -R ~/.bundle` inside the folder of the Rails project.
+9. The local development server will also be reachable in your Windows environment on *localhost:3000*.
 
 ## Install Ruby and Rails on Ubuntu 16.04
 1. Update your system with `sudo apt-get update` and `sudo apt-get dist-upgrade` and clean up with `sudo apt-get autoclean`.
@@ -20,7 +21,18 @@ This is a guide to install Ruby and the web development framework Rails on Windo
 5. Update your gems with `gem update --system` and `gem update`. Also get bundler with `gem install bundler`. Do `rbenv rehash` afterwards.
 6. Modern Rails has a lot of depencencies to JavaScript so we need to get Node.js (including npm) via `curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -` and `sudo apt-get install nodejs`. Check if it works with `node -v` and `npm -v`
 7. Now finally we get Rails with `gem install rails -v 4.2.7` and `rbenv rehash`. Check if it works with `rails -v`.
-8. The final check will be done with `rails new anapp`, followed by `cd anapp`, and `rails s`. The local development server will be reachable in your Windows environment on *localhost:3000*.
+8. The final check will be done with `rails new anapp`, followed by `cd anapp`, and `rails s`. The local development server will be reachable on *localhost:3000*.
+
+## Install Ruby and Rails on OS X 10.11
+1. Update your system via **App Store** > **Updates**.
+2. Install Homebrew with `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`. You enter all this commands into Terminal or iTerm.
+3. Install rbenv and its ruby-build plugin via Homebrew with `brew install rbenv ruby-build`. Import them to your shell with `echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.bash_profile` and `source ~/.bash_profile`.
+4. Now it is time to get Ruby with `rbenv install 2.3.1` and point your shell to it with `rbenv global 2.3.1`. Check if it worked with `ruby -v` and `gem -v`.
+5. Update your gems with `gem update --system` and `gem update`. Also get bundler with `gem install bundler`. Do `rbenv rehash` afterwards.
+6. Modern Rails has a lot of depencencies to JavaScript so we need to get Node.js (including npm) via Homebrew with `brew install node`. Check if it works with `node -v` and `npm -v`
+7. Now finally we get Rails with `gem install rails -v 4.2.7` and `rbenv rehash`. Check if it works with `rails -v`.
+8. The final check will be done with `rails new anapp`, followed by `cd anapp`, and `rails s`. The local development server will be reachable on *localhost:3000*.
+
 
 ## Other Versions
 If you want to install other versions than given above you can do that. If you know the version you need, then just replace that version number with those I gave. If you are not sure which versions are avaivable then do:
