@@ -41,3 +41,9 @@ If you want to install other versions than given above you can do that. If you k
 
 For the case that you want to use the more current but less stable Node.js 6 do this instead of the given above:
 + `curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -`.
+
+# Install and use PostgreSQL with Ruby on Rails with OS X
+1. Update your system via **App Store** > **Updates**.
+2. Install [Postgress.app](http://postgresapp.com/) with normal drag and drop install procedure and start it.
+3. Install the pg gem manually (not with bundler) with `gem install pg -- --with-pg-config=/Applications/Postgres.app/Contents/Versions/latest/bin/pg_config`.
+4. Your PostgreSQL database is now running at *localhost:5432*.
